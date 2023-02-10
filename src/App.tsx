@@ -6,6 +6,10 @@ function App() {
   const colorStops = colors.join(', ');
   const backgroundImage = `linear-gradient(${colorStops})`;
 
+  const addColor = () => {
+      setColors([...colors, '#000000'])
+  }
+
   return (
     <main className="container">
       <article
@@ -37,6 +41,7 @@ function App() {
           );
         })}
       </form>
+        <button onClick={addColor}>Add</button>
     </main>
   );
 }
