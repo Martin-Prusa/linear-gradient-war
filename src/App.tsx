@@ -37,12 +37,15 @@ function App() {
                   setColors(nextColors);
                 }}
               />
-                <button onClick={(event) => {
-                    event.preventDefault()
-                    const c = [...colors]
-                    c.splice(index, 1)
-                    setColors(c)
-                }}>Delete</button>
+                {index > 1 ?
+                    <button onClick={(event) => {
+                        event.preventDefault()
+                        const c = [...colors]
+                        c.splice(index, 1)
+                        setColors(c)
+                    }}>Delete</button>
+                    : null
+                }
             </article>
           );
         })}
